@@ -9,6 +9,7 @@ import (
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/Roshantwanabasu/news-clone/graph"
 	"github.com/Roshantwanabasu/news-clone/graph/generated"
+	"github.com/Roshantwanabasu/news-clone/internal/auth"
 	database "github.com/Roshantwanabasu/news-clone/internal/pkg/db/migrations/mysql"
 	"github.com/go-chi/chi/v5"
 )
@@ -21,6 +22,7 @@ func main() {
 		port = defaultPort
 	}
 	router := chi.NewRouter()
+	router.Use(auth.Middleware())
 
 	database.InitDB()
 	database.Migrate()
