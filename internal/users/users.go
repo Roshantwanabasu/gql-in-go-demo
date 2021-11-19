@@ -32,7 +32,7 @@ func (user *User) Create() {
 }
 
 func GetUserIdByUsername(username string) (int, error) {
-	stmt, err := database.Db.Prepare("Select ID from users where  Username = ?")
+	stmt, err := database.Db.Prepare("Select ID from Users where  Username = ?")
 	if err != nil {
 		log.Fatal(err)
 	}

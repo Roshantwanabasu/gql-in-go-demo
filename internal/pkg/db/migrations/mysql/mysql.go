@@ -13,7 +13,7 @@ import (
 var Db *sql.DB
 
 func InitDB() {
-	db, err := sql.Open("mysql", "roshan:Password`123@tcp(localhost)/newsclone")
+	db, err := sql.Open("mysql", "roshan:Password`123@tcp(localhost)/gql-in-go-demo")
 	if err != nil {
 		log.Panic(err)
 	}
