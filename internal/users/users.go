@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"log"
 
-	database "github.com/Roshantwanabasu/news-clone/internal/pkg/db/migrations/mysql"
+	database "github.com/Roshantwanabasu/gql-in-go-demo/internal/pkg/db/migrations/mysql"
 	"golang.org/x/crypto/bcrypt"
 )
 

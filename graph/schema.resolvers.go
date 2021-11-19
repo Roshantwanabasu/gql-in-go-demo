@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/Roshantwanabasu/news-clone/graph/generated"
-	"github.com/Roshantwanabasu/news-clone/graph/model"
-	"github.com/Roshantwanabasu/news-clone/internal/links"
-	"github.com/Roshantwanabasu/news-clone/internal/users"
-	"github.com/Roshantwanabasu/news-clone/pkg/jwt"
+	"github.com/Roshantwanabasu/gql-in-go-demo/graph/generated"
+	"github.com/Roshantwanabasu/gql-in-go-demo/graph/model"
+	"github.com/Roshantwanabasu/gql-in-go-demo/internal/links"
+	"github.com/Roshantwanabasu/gql-in-go-demo/internal/users"
+	"github.com/Roshantwanabasu/gql-in-go-demo/pkg/jwt"
 )
 
 func (r *mutationResolver) CreateLink(ctx context.Context, input model.NewLink) (*model.Link, error) {

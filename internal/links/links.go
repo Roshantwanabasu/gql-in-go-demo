@@ -3,8 +3,8 @@ package links
 import (
 	"log"
 
-	database "github.com/Roshantwanabasu/news-clone/internal/pkg/db/migrations/mysql"
-	"github.com/Roshantwanabasu/news-clone/internal/users"
+	database "github.com/Roshantwanabasu/gql-in-go-demo/internal/pkg/db/migrations/mysql"
+	"github.com/Roshantwanabasu/gql-in-go-demo/internal/users"
 )
 
 type Link struct {

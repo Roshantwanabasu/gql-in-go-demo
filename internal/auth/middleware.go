@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/Roshantwanabasu/news-clone/internal/users"
-	"github.com/Roshantwanabasu/news-clone/pkg/jwt"
+	"github.com/Roshantwanabasu/gql-in-go-demo/internal/users"
+	"github.com/Roshantwanabasu/gql-in-go-demo/pkg/jwt"
 )
 
 var userCtxKey = &contextKey{"user"}

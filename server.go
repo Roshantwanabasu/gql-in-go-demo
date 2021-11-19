@@ -7,10 +7,10 @@ import (
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/Roshantwanabasu/news-clone/graph"
-	"github.com/Roshantwanabasu/news-clone/graph/generated"
-	"github.com/Roshantwanabasu/news-clone/internal/auth"
-	database "github.com/Roshantwanabasu/news-clone/internal/pkg/db/migrations/mysql"
+	"github.com/Roshantwanabasu/gql-in-go-demo/graph"
+	"github.com/Roshantwanabasu/gql-in-go-demo/graph/generated"
+	"github.com/Roshantwanabasu/gql-in-go-demo/internal/auth"
+	database "github.com/Roshantwanabasu/gql-in-go-demo/internal/pkg/db/migrations/mysql"
 	"github.com/go-chi/chi/v5"
 )
 
