@@ -11,6 +11,8 @@ import (
 	"github.com/Roshantwanabasu/news-clone/graph/generated"
 	"github.com/Roshantwanabasu/news-clone/graph/model"
 	"github.com/Roshantwanabasu/news-clone/internal/links"
+	"github.com/Roshantwanabasu/news-clone/internal/users"
+	"github.com/Roshantwanabasu/news-clone/pkg/jwt"
 )
 
 func (r *mutationResolver) CreateLink(ctx context.Context, input model.NewLink) (*model.Link, error) {
@@ -22,11 +24,31 @@ func (r *mutationResolver) CreateLink(ctx context.Context, input model.NewLink) 
 }
 
 func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) (string, error) {
-	panic(fmt.Errorf("not implemented"))
+	var user users.User
+	user.Username = input.Username
+	user.Password = input.Password
+	user.Create()
+	token, err := jwt.GenerateToken(user.Username)
+	if err != nil {
+		return "", err
+	}
+	return token, nil
 }
 
 func (r *mutationResolver) Login(ctx context.Context, input model.Login) (string, error) {
-	panic(fmt.Errorf("not implemented"))
+	var user users.User
+	user.Username = input.Username
+	user.Password = input.Password
+	validLogin := user.Authenticate()
+	if !validLogin {
+		return "", &users.WrongUsernameOrPasswordError{}
+	}
+
+	token, err := jwt.GenerateToken(user.Username)
+	if err != nil {
+		return "", err
+	}
+	return token, nil
 }
 
 func (r *mutationResolver) RefreshToken(ctx context.Context, input model.RefreshTokenInput) (string, error) {
